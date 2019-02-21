@@ -1,0 +1,60 @@
+﻿@using FinalProject.Models;
+@{
+    ViewBag.Title = "Add new product";
+}
+<h1>Add new product</h1>
+<div>
+    <div class="a-product">
+        <form class="form-inline" action="/Admin/Add/" method="post">
+            <div class="form-group">
+                <label for="exampleInputEmail1">ID</label>
+                <input name="ID" type="text" class="form-control" id="exampleInputEmail1" placeholder="ID" value="" disabled>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label for="exampleInputName2">Name</label>
+                <input name="Name" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="">
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="exampleInputName2">Price</label>
+                <input name="Price" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="">
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="exampleInputName2">Size</label>
+                <input name="Size" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="">
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="exampleInputName2">Description</label>
+                <input name="Description" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="">
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="exampleInputName2">Color</label>
+                <input name="Color" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="">
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="exampleInputName2">Material</label>
+                <input name="Material" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="">
+            </div>
+            <br/>
+            <input type="submit" class="btn btn-primary" value="Add">
+        </form>
+        @if (ViewBag.message != null)
+        {
+            <p style="color: @ViewBag.color">@ViewBag.message</p>
+        }
+    </div>
+</div>
+
+<style>
+    .a-product {
+        background: #d7d7d7;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px;
+    }
+</style>

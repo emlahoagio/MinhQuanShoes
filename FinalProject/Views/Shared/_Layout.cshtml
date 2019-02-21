@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - MinhMinh Shoe Store</title>
+    <link href="/Static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Static/css/style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700,400italic,500italic,600italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+</head>
+<body class="contentpage">
+
+    <div class="navbar navbar-default navbar-fixed-top affix inner-pages" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1>
+                    <a class="navbar-brand" href="#">
+                        <strong>Minh</strong>minh<br />
+                        <span data-hover="Kennels">Shop</span>
+                    </a>
+                </h1>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                <ul class="nav navbar-nav" style="float: right; font-size: 20px">
+                    @if (@Session["username"] == null)
+                    {
+                        <li><a href="/Login/">Login</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="/Admin/">Welcome @Session["username"]</a></li>
+                        <li><a href="/Login/Clear/">Log out</a></li>
+                    }
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    @RenderBody()
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/Static/js/bootstrap.min.js"></script>
+    <script src="/Static/js/carouFredSel.js"></script>
+    <script src="/Static/js/jquery.stellar.min.js"></script>
+    <script src="/Static/js/ekkoLightbox.js"></script>
+    <script src="/Static/js/custom.js"></script>
+    <script src="/Static/js/jquery-ui.min.js"></script>
+</body>
+</html>

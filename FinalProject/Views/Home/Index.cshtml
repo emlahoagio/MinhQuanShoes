@@ -1,0 +1,76 @@
+﻿@using FinalProject.Models;
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 centered">
+            <h3><span>About Shop</span></h3>
+            <p>Ghi cái gì đó vào đây.</p>
+        </div>
+    </div>
+</div>
+<div class="prices" data-stellar-background-ratio=".3">
+    <div class="container">
+        <div class="row">
+            @foreach (var product in ViewData["Products"] as IList<Product>)
+            {
+                <div class="col-md-3 costs">
+                    <div data-stellar-ratio="1.2" data-stellar-vertical-offset="150" data-stellar-horizontal-offset="0">
+                        <img src="/Static/images/small-dog.png" alt="Small dog pricing" />
+                        <h4>@product.Name</h4>
+                        <p>@product.Price</p>
+                        <p>@product.Size</p>
+                        <p>@product.Color</p>
+                        <form method="get" action="#">
+                            <button type="submit" class="btn btn-default btn-green">Book now</button>
+                        </form>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 centered">
+            <h3><span>Một số hình ảnh sản phẩm...</span></h3>
+            <p>Giới thiệu về một số thương hiệu...</p>
+        </div>
+    </div>
+</div>
+<div id="c-carousel">
+    <div id="wrapper">
+        <div id="carousel">
+            <div>
+                <a href="/Static/images/dog-1.png" title="Shoe" data-hover="Sandy the west highland terrier" data-toggle="lightbox" class="lightbox">
+                    <img src="/Static/images/dog-1.png" alt="Shoe" />
+                </a>
+            </div>
+            <div>
+                <a href="/Static/images/dog-2.png" title="Shoe" data-hover="Marty the yorkshire terrier" data-toggle="lightbox" class="lightbox">
+                    <img src="/Static/images/dog-2.png" alt="Shoe" />
+                </a>
+            </div>
+            <div>
+                <a href="/Static/images/dog-3.png" title="Shoe" data-hover="Kyla the bull terrier" data-toggle="lightbox" class="lightbox">
+                    <img src="/Static/images/dog-3.png" alt="Shoe" />
+                </a>
+            </div>
+            <div>
+                <a href="/Static/images/dog-4.png" title="Shoe" data-hover="Marty the yorkshire terrier" data-toggle="lightbox" class="lightbox">
+                    <img src="/Static/images/dog-4.png" alt="Shoe" />
+                </a>
+            </div>
+            <div>
+                <a href="/Static/images/dog-5.png" title="Shoe" data-hover="Sandy the west highland terrier" data-toggle="lightbox" class="lightbox">
+                    <img src="/Static/images/dog-5.png" alt="Shoe" />
+                </a>
+            </div>
+            <div>
+                <a href="/Static/images/dog-6.png" title="Shoe" data-hover="Kyla the bull terrier" data-toggle="lightbox" class="lightbox">
+                    <img src="/Static/images/dog-6.png" alt="Shoe" />
+                </a>
+            </div>
+        </div>
+        <div id="pager" class="pager"></div>
+    </div>
+</div>
