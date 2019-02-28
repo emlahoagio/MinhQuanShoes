@@ -36,7 +36,16 @@ namespace FinalProject.Controllers
         [HttpPost]
         public ActionResult Update(Product product)
         {
-            if (Product.updateProduct(product))
+            if (product.Image != null)
+            {
+                string pic = System.IO.Path.GetFileName(product.Image.FileName);
+                pic = product.ID + ".jpg";
+                string path = System.IO.Path.Combine(
+                                       Server.MapPath("~"), "Static/images/products/", pic);
+                // file is uploaded
+                product.Image.SaveAs(path);
+            }
+                if (Product.updateProduct(product))
             {
                 ViewBag.message = $"Product {product.Name} updated successfully";
                 ViewBag.color = "green";

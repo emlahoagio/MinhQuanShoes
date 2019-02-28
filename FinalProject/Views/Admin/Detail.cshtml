@@ -3,52 +3,68 @@
     ViewBag.Title = "ProductDetail";
 }
 @{var product = ViewData["product"] as Product;}
-<h1>ProductDetail of @product.Name</h1>
 <div>
-    <div class="a-product">
-        <form class="form-inline" action="/Admin/Update/@product.ID" method="post">
-            <div class="form-group">
-                <label for="exampleInputEmail1">ID</label>
-                <input name="ID" type="text" class="form-control" id="exampleInputEmail1" placeholder="ID" value="@product.ID" disabled>
+    <div class="container">
+        <h1>ProductDetail of @product.Name</h1>
+        
+           <div class="row">
+            <div class="col-md-6">
+                <img src="/Static/images/products/@(product.ID).jpg" style="width: 100%;" />
             </div>
-            <br/>
-            <div class="form-group">
-                <label for="exampleInputName2">Name</label>
-                <input name="Name" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="@product.Name">
+            <div class="col-md-6">
+
+                <div class="a-product">
+                    <form class="form-inline" action="/Admin/Update/@product.ID" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="exampleInputName2">Image</label>
+                            <input name="Image" type="file" class="form-control" id="exampleInputName2" placeholder="Image">
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">ID</label>
+                            <input name="ID" type="text" class="form-control" id="exampleInputEmail1" placeholder="ID" value="@product.ID" disabled>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="exampleInputName2">Name</label>
+                            <input name="Name" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="@product.Name">
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="exampleInputName2">Price</label>
+                            <input name="Price" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="@product.Price">
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="exampleInputName2">Size</label>
+                            <input name="Size" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="@product.Size">
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="exampleInputName2">Description</label>
+                            <input name="Description" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="@product.Description">
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="exampleInputName2">Color</label>
+                            <input name="Color" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="@product.Color">
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="exampleInputName2">Material</label>
+                            <input name="Material" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="@product.Material">
+                        </div>
+                        <br />
+                        <input type="submit" class="btn btn-primary" value="Update">
+                        <a href="/Admin/Delete/@product.ID" class="btn btn-danger">Delete</a>
+                    </form>
+                    @if (ViewBag.message != null)
+                    {
+                        <p style="color: @ViewBag.color">@ViewBag.message</p>
+                    }
+                </div>
             </div>
-            <br />
-            <div class="form-group">
-                <label for="exampleInputName2">Price</label>
-                <input name="Price" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="@product.Price">
-            </div>
-            <br />
-            <div class="form-group">
-                <label for="exampleInputName2">Size</label>
-                <input name="Size" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="@product.Size">
-            </div>
-            <br />
-            <div class="form-group">
-                <label for="exampleInputName2">Description</label>
-                <input name="Description" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="@product.Description">
-            </div>
-            <br />
-            <div class="form-group">
-                <label for="exampleInputName2">Color</label>
-                <input name="Color" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="@product.Color">
-            </div>
-            <br />
-            <div class="form-group">
-                <label for="exampleInputName2">Material</label>
-                <input name="Material" type="text" class="form-control" id="exampleInputName2" placeholder="Name" value="@product.Material">
-            </div>
-            <br/>
-            <input type="submit" class="btn btn-primary" value="Update">
-            <a href="/Admin/Delete/@product.ID" class="btn btn-danger">Delete</a>
-        </form>
-        @if (ViewBag.message != null)
-        {
-            <p style="color: @ViewBag.color">@ViewBag.message</p>
-        }
+        </div>
     </div>
 </div>
 

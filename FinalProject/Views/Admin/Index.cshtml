@@ -3,39 +3,38 @@
     ViewBag.Title = "Admin";
 }
 <style>
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    tr:nth-child(even) {
-        background-color: #dddddd;
-    }
 </style>
-<h2>Management Product <a href="/Admin/Add/" class="btn btn-success">Add new</a></h2> 
+<h2>Management Product <a href="/Admin/Add/" class="btn btn-success">Add new</a></h2>
 @if (((List<Product>)ViewData["Products"]).Count > 0)
 {
-    <table>
-        <tr>
-            <th>Product ID</th>
-            <th>Product Name</th>
-            <th>Product Price</th>
-        </tr>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th></th>
+            </tr>
+        </thead>
         @foreach (var product in ViewData["Products"] as IList<Product>)
         {
+            <tbody>
                 <tr>
+                    <td>
+                        <img src="/Static/images/products/@(product.ID).jpg" style="height: 40px; width: 40px;" />
+                    </td>
                     <td>@product.ID</td>
-                <td>
-                    <a href="/Admin/Detail/@product.ID">@product.Name</a></td>
-                <td>@product.Price</td>
-            </tr>
+                    <td>
+                        <a href="/Admin/Detail/@product.ID">@product.Name</a>
+                    </td>
+                    <td>@product.Price</td>
+                    <td>
+                        <a href="/Admin/Detail/@product.ID" class="btn btn-success">Update</a>
+                        <a href="/Admin/Delete/@product.ID" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
         }
     </table>
 }

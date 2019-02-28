@@ -152,6 +152,23 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Static\css\bootstrap.min.css" />
+    <Content Include="Static\css\style.css" />
+    <Content Include="Static\images\dog-1.png" />
+    <Content Include="Static\images\dog-2.png" />
+    <Content Include="Static\images\dog-3.png" />
+    <Content Include="Static\images\dog-4.png" />
+    <Content Include="Static\images\dog-5.png" />
+    <Content Include="Static\images\dog-6.png" />
+    <Content Include="Static\images\large-dog.png" />
+    <Content Include="Static\images\medium-dog.png" />
+    <Content Include="Static\images\prices-bg.png" />
+    <Content Include="Static\images\small-dog.png" />
+    <Content Include="Static\images\xlarge-dog.png" />
+    <Content Include="Static\js\bootstrap.min.js" />
+    <Content Include="Static\js\carouFredSel.js" />
+    <Content Include="Static\js\custom.js" />
+    <Content Include="Static\js\jquery.stellar.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
